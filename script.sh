@@ -8,6 +8,7 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 ESLINT_FORMATTER="${GITHUB_ACTION_PATH}/eslint-formatter-rdjson/index.js"
 
 echo '::group::🐶 Installing reviewdog ... https://github.com/reviewdog/reviewdog'
+[ command -v curl >/dev/null 2>/dev/null ] || (apt-get update && apt-get install -y curl ca-certificates)
 curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b "${TEMP_PATH}" "${REVIEWDOG_VERSION}" 2>&1
 echo '::endgroup::'
 
