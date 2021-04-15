@@ -55,14 +55,14 @@ runs:
         # INPUT_<VARIABLE_NAME> is not available in Composite run steps
         # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
-        INPUT_LEVEL: ${{ inputs.level }}
-        INPUT_REPORTER: ${{ inputs.reporter }}
-        INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
-        INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
-        INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
-        INPUT_ESLINT_FLAGS: ${{ inputs.eslint_flags }}
-        INPUT_WORKDIR: ${{ inputs.workdir }}
-        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
+        INPUT_LEVEL: 'error'
+        INPUT_REPORTER: 'github-pr-review'
+        INPUT_FILTER_MODE: 'added'
+        INPUT_FAIL_ON_ERROR: 'false'
+        INPUT_REVIEWDOG_FLAGS: ''
+        INPUT_ESLINT_FLAGS: ''
+        INPUT_WORKDIR: .
+        INPUT_TOOL_NAME: eslint
 branding:
   icon: 'alert-octagon'
   color: 'blue'
